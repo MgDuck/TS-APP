@@ -1,0 +1,10 @@
+catboost==1.2
+deep_translator==1.11.4
+etna==2.1.0
+langdetect==1.0.9
+numpy==1.22.4
+pandas==1.5.3
+scikit_learn==1.0.2
+sentence_transformers==2.2.2
+streamlit==1.23.1
+yfinance==0.2.18

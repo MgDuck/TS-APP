@@ -6,9 +6,7 @@ import streamlit as st
 import text_to_table
 import text_to_translate
 
-# импортируем классы ETNA
 from etna.datasets import TSDataset
-
 
 import time
 import pickle
@@ -22,7 +20,7 @@ from catboost import CatBoostClassifier
 
 st.set_option("deprecation.showPyplotGlobalUse", False) # отключение предупреждения
 
-st.title("📈TS-APP: анализ акций и новостей") # название приложения
+st.title("📈TS-APP: предсказание тренда акций") # название приложения
 st.header("💼Выбор акции и временного диапазона⌛")
 
 
@@ -180,7 +178,6 @@ for i in range(1,11):
                     'learning_rate': 0.03,
                     'custom_metric' : ['MCC','Precision','Recall','F1','Logloss','NormalizedGini'],
                     "verbose": False,
-                    ''
                     "use_best_model": True}
 
         cv_dataset = Pool(data=X,
@@ -209,6 +206,3 @@ for i in range(1,11):
 
         st.write('Лучшие результаты метрик для предсказания тренда {}-го дня на каждом фолде'.format(i))
         st.write(pd.DataFrame(bests))
-
-
-    
